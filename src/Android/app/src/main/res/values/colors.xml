@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    Cores Principais-->
+    <color name="azul_claro">#3EBAD2</color>
+    <color name="rosa_salmao">#EE715F</color>
+    <color name="branco">#FFFFFF</color>
+
+<!--    Cores Secundárias-->
+    <color name="bege">#E2D1B3</color>
+    <color name="marrom">#81542D</color>
+    <color name="azul_escuro">#01577A</color>
 </resources>
