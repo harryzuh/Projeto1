@@ -1,162 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cadastro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imgMaya"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maya_logo" />
-
-    <TextView
-        android:id="@+id/txtEntrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Cadastro"
-        android:textColor="@color/azul_escuro"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMaya" />
-
-    <TextView
-        android:id="@+id/txtNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="48dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Nome"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtNome"
-        app:layout_constraintTop_toBottomOf="@id/txtEntrar"/>
-
-    <EditText
-        android:id="@+id/editTxtNome"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cadastro"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/bg_edittext_arredondado"
-        android:ems="10"
-        android:hint="Digite seu nome"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
-
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Email"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTxtNome" />
+        android:background="@drawable/gradient_background">
 
-    <EditText
-        android:id="@+id/editTxtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/bg_edittext_arredondado"
-        android:ems="10"
-        android:hint="Digite seu e-mail"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        <ImageView
+            android:id="@+id/imgMaya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/maya_logo" />
 
-    <TextView
-        android:id="@+id/txtSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Senha"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtSenha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTxtEmail" />
+        <TextView
+            android:id="@+id/txtEntrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Cadastro"
+            android:textColor="@color/azul_escuro"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgMaya" />
 
-    <EditText
-        android:id="@+id/editTxtSenha"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/bg_edittext_arredondado"
-        android:ems="10"
-        android:hint="Crie uma senha"
-        android:inputType="textPassword"
-        android:maxLength="30"
-        android:paddingStart="16dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Nome"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTxtNome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtEntrar" />
 
-    <TextView
-        android:id="@+id/txtDataNasc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:text="Data de Nascimento"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtDataNasc"
-        app:layout_constraintTop_toBottomOf="@id/editTxtSenha"/>
+        <EditText
+            android:id="@+id/editTxtNome"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_edittext_arredondado"
+            android:ems="10"
+            android:hint="Digite seu nome"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
-    <EditText
-        android:id="@+id/editTxtDataNasc"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/bg_edittext_arredondado"
-        android:ems="10"
-        android:hint="Digite sua data de nascimento"
-        android:inputType="date"
-        android:paddingStart="16dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDataNasc" />
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Email"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTxtEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTxtNome" />
 
-    <Button
-        android:id="@+id/btCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conectar-se"
-        android:textSize="24sp"
-        android:backgroundTint="@color/azul_escuro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTxtDataNasc"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <EditText
+            android:id="@+id/editTxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_edittext_arredondado"
+            android:ems="10"
+            android:hint="Digite seu e-mail"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Senha"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTxtSenha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTxtEmail" />
+
+        <EditText
+            android:id="@+id/editTxtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_edittext_arredondado"
+            android:ems="10"
+            android:hint="Crie uma senha"
+            android:inputType="textPassword"
+            android:maxLength="30"
+            android:paddingStart="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
+
+        <TextView
+            android:id="@+id/txtDataNasc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Data de Nascimento"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTxtDataNasc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTxtSenha" />
+
+        <EditText
+            android:id="@+id/editTxtDataNasc"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_edittext_arredondado"
+            android:ems="10"
+            android:hint="Digite sua data de nascimento"
+            android:inputType="date"
+            android:paddingStart="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDataNasc" />
+
+        <TextView
+            android:id="@+id/txtTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Telefone"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTxtTelefone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTxtDataNasc" />
+
+        <EditText
+            android:id="@+id/editTxtTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/bg_edittext_arredondado"
+            android:ems="10"
+            android:hint="Digite seu telefone"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
+
+        <Button
+            android:id="@+id/btCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/azul_escuro"
+            android:text="Conectar-se"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTxtTelefone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
