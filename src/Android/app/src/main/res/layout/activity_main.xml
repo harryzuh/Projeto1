@@ -44,5 +44,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Já tenho uma conta"
+        android:textSize="20sp"
+        android:textColor="@color/branco"
+        android:backgroundTint="@color/azul_escuro"
+        android:layout_marginBottom="72dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btStart"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

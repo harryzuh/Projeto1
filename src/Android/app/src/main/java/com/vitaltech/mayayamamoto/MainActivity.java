@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private final Handler autoScrollHandler = new Handler();
     private final int AUTO_SCROLL_INTERVAL = 3000; // milisegundos
 
-    Button btStart;
+    Button btStart, btLogin;
 
     Intent intent;
 
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btStart = findViewById(R.id.btStart);
+        btLogin = findViewById(R.id.btLogin);
 
         btStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, CadastroActivity.class);
                 startActivity(intent);
             }
+        });
+
+        btLogin.setOnClickListener(v -> {
+            intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
 
         // Carrossel

@@ -1,9 +1,11 @@
 package com.vitaltech.mayayamamoto;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,16 +15,62 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class CadastroActivity extends AppCompatActivity {
 
-    EditText editTextDataNasc;
+    ApiService api = RetrofitClient.getRetrofit().create(ApiService.class);
+
+    EditText editTxtNome, editTxtEmail, editTxtSenha, editTextDataNasc, editTxtTelefone;
+    Button btCadastro;
+
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.cadastro);
 
+        editTxtNome = findViewById(R.id.editTxtNome);
+        editTxtEmail = findViewById(R.id.editTxtEmail);
+        editTxtSenha = findViewById(R.id.editTxtSenha);
         editTextDataNasc = findViewById(R.id.editTxtDataNasc);
+        editTxtTelefone = findViewById(R.id.editTxtTelefone);
+
+        btCadastro = findViewById(R.id.btCadastro);
+
+        btCadastro.setOnClickListener(v -> {
+            String nomeStr = editTxtNome.getText().toString();
+            String emailStr = editTxtEmail.getText().toString();
+            String senhaStr = editTxtSenha.getText().toString();
+            String data_nasc = editTextDataNasc.getText().toString();
+            String telefone = editTxtTelefone.getText().toString();
+
+            Usuarios usuario = new Usuarios(nomeStr, emailStr, senhaStr, data_nasc, telefone);
+
+            api.cadastrar(usuario).enqueue(new Callback<Usuarios>() {
+                @Override
+                public void onResponse(Call<Usuarios> call, Response<Usuarios> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Cadastro feito!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Erro: " + response.code(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Usuarios> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "Falha: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            intent = new Intent(CadastroActivity.this, TrilhaExerciciosActivity.class);
+            intent.putExtra("nome", nomeStr);
+        });
+
 
         // Criar calendario no edit text da data de nascimento
         editTextDataNasc.setOnClickListener(v -> {
