@@ -35,9 +35,9 @@ public class TrilhaExerciciosActivity extends AppCompatActivity {
 
         txtOla = findViewById(R.id.txtOla);
 
-        String nomeRecebido = getIntent().getStringExtra("nome");
+        /* String nomeRecebido = getIntent().getStringExtra("nome");
 
-        txtOla.setText("Olá, " + nomeRecebido);
+        txtOla.setText("Olá, " + nomeRecebido); */
 
     }
 }

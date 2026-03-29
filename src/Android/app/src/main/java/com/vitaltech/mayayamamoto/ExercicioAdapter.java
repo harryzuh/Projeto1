@@ -1,6 +1,7 @@
 package com.vitaltech.mayayamamoto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,14 @@ public class ExercicioAdapter extends RecyclerView.Adapter<ExercicioAdapter.View
         holder.txtNome.setText(ex.getNomeExercicio());
         holder.txtFrequencia.setText(ex.getFrequencia());
         holder.imgExercicio.setImageResource(ex.getImgExercicio());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetalheActivity.class);
+
+            intent.putExtra("nome", ex.getNomeExercicio());
+
+            context.startActivity(intent);
+        });
     }
 
     @Override

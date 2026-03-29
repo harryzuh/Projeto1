@@ -56,6 +56,8 @@ public class CadastroActivity extends AppCompatActivity {
                 public void onResponse(Call<Usuarios> call, Response<Usuarios> response) {
                     if (response.isSuccessful()) {
                         Toast.makeText(getApplicationContext(), "Cadastro feito!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(CadastroActivity.this, TrilhaExerciciosActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "Erro: " + response.code(), Toast.LENGTH_SHORT).show();
                     }

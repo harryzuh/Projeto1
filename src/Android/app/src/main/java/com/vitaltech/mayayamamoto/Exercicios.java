@@ -3,7 +3,6 @@ package com.vitaltech.mayayamamoto;
 public class Exercicios {
     private String nomeExercicio;
     private String descricao;
-    private String videoUrl;
     private String frequencia;
     private int imgExercicio;
 
@@ -13,10 +12,6 @@ public class Exercicios {
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public String getVideoUrl() {
-        return videoUrl;
     }
 
     public String getFrequencia(){

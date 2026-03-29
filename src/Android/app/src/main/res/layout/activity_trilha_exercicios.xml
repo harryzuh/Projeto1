@@ -21,7 +21,7 @@
         android:id="@+id/txtOla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Olá, Fulano!"
+        android:text="Olá!"
         android:textSize="34sp"
         android:fontFamily="sans-serif-medium"
         app:layout_constraintStart_toStartOf="parent"
