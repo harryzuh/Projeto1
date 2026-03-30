@@ -36,6 +36,9 @@
         <activity
             android:name=".DetalheActivity"
             android:exported="false" />
+
+        <activity android:name=".RecuperarSenhaActivity" android:exported="false" />
+
     </application>
 
 </manifest>
