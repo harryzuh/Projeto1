@@ -19,7 +19,7 @@ function Navbar() {
       </div>
 
       <Link to="/users" style={{ color: "white", textDecoration: "none", fontWeight: "500" }}>
-        ADMs
+        ADM
       </Link>
 
     </nav>

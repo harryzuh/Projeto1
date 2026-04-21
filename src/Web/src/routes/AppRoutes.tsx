@@ -5,6 +5,7 @@ import Patients from "../pages/Patients/Patients"
 import PatientProfile from "../pages/Patients/PatientProfile"
 import NewPatient from "../pages/Patients/NewPatient"
 import Exercises from "../pages/Exercises/Exercises"
+import NewExercise from "../pages/Exercises/NewExercise"
 
 function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ function AppRoutes() {
         <Route path="/patients/:id" element={<Layout><PatientProfile /></Layout>} />
         <Route path="/patients/new" element={<Layout><NewPatient /></Layout>} />
         <Route path="/exercicios" element={<Layout><Exercises /></Layout>} />
+        <Route path="/exercicios/new" element={<Layout><NewExercise /></Layout>} />
       </Routes>
     </BrowserRouter>
   )
