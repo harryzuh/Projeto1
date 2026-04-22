@@ -18,7 +18,8 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "dev": "npx tsx ./index.ts"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
