@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { AuthProvider } from "../context/AuthContext"
+import PrivateRoute from "../components/PrivateRoute"
 import Layout from "../components/Layout"
 import Login from "../pages/Login/Login"
 import Patients from "../pages/Patients/Patients"
@@ -10,15 +12,17 @@ import NewExercise from "../pages/Exercises/NewExercise"
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/patients" element={<Layout><Patients /></Layout>} />
-        <Route path="/patients/:id" element={<Layout><PatientProfile /></Layout>} />
-        <Route path="/patients/new" element={<Layout><NewPatient /></Layout>} />
-        <Route path="/exercicios" element={<Layout><Exercises /></Layout>} />
-        <Route path="/exercicios/new" element={<Layout><NewExercise /></Layout>} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/patients" element={<PrivateRoute><Layout><Patients /></Layout></PrivateRoute>} />
+          <Route path="/patients/:id" element={<PrivateRoute><Layout><PatientProfile /></Layout></PrivateRoute>} />
+          <Route path="/patients/new" element={<PrivateRoute><Layout><NewPatient /></Layout></PrivateRoute>} />
+          <Route path="/exercicios" element={<PrivateRoute><Layout><Exercises /></Layout></PrivateRoute>} />
+          <Route path="/exercicios/new" element={<PrivateRoute><Layout><NewExercise /></Layout></PrivateRoute>} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
